@@ -39,7 +39,6 @@ export function MapaJornada() {
   const wrap = useRef<HTMLDivElement>(null);
   const caminho = useRef<SVGPathElement>(null);
   const [mobile, setMobile] = useState(false);
-  const [prog, setProg] = useState(0);
   const [pos, setPos] = useState({ x: 50, y: 0, virado: false, andando: false });
 
   const ps = useMemo(() => pontos(mobile), [mobile]);
@@ -68,7 +67,6 @@ export function MapaJornada() {
       const pt = p.getPointAtLength(t * len);
       const virado = pt.x < ultimoX - 0.05 ? true : pt.x > ultimoX + 0.05 ? false : undefined;
       ultimoX = pt.x;
-      setProg(t);
       setPos((old) => ({ x: pt.x, y: pt.y, virado: virado ?? old.virado, andando: true }));
       clearTimeout(parar);
       parar = setTimeout(() => setPos((o) => ({ ...o, andando: false })), 180);
@@ -112,16 +110,6 @@ export function MapaJornada() {
           strokeOpacity="0.35"
           strokeWidth="4"
           strokeDasharray="8 12"
-          vectorEffect="non-scaling-stroke"
-        />
-        <path
-          d={d}
-          fill="none"
-          stroke="var(--amarelo)"
-          strokeWidth="6"
-          pathLength={1}
-          strokeDasharray="1 1"
-          strokeDashoffset={1 - prog}
           vectorEffect="non-scaling-stroke"
         />
       </svg>
