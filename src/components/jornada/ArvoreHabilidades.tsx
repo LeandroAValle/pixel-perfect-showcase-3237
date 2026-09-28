@@ -5,9 +5,9 @@ import { useReveal } from "./useReveal";
 const POSICOES = [70, 215, 360, 500, 640, 785, 930];
 
 export function ArvoreHabilidades() {
-  const [selecionada, setSelecionada] = useState(competencias[0].id);
+  const [selecionada, setSelecionada] = useState(competencias[0]!.id);
   const { ref, visivel } = useReveal<HTMLDivElement>("-5% 0px -10% 0px");
-  const atual = competencias.find((c) => c.id === selecionada) ?? competencias[0];
+  const atual = competencias.find((c) => c.id === selecionada) ?? competencias[0]!;
 
   return (
     <div ref={ref} className="max-w-5xl mx-auto">
