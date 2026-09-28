@@ -27,8 +27,8 @@ function construirCaminho(ps: { x: number; y: number }[]) {
   const todos = [inicio, ...ps, fim];
   let d = `M ${inicio.x} ${inicio.y}`;
   for (let i = 1; i < todos.length; i++) {
-    const a = todos[i - 1];
-    const b = todos[i];
+    const a = todos[i - 1]!;
+    const b = todos[i]!;
     const my = (a.y + b.y) / 2;
     d += ` C ${a.x} ${my}, ${b.x} ${my}, ${b.x} ${b.y}`;
   }
