@@ -151,3 +151,51 @@
     color: var(--color-foreground);
   }
 }
+
+/* --- Seção "Minha Jornada": progressão, revelação e ramificação --- */
+@layer components {
+  .jornada-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1),
+      transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .jornada-reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .jornada-ramo {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 1.1s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .jornada-ramo.is-in {
+    stroke-dashoffset: 0;
+  }
+
+  .jornada-node {
+    opacity: 0;
+    transform: scale(0.4);
+    transform-origin: center;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .jornada-node.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jornada-reveal,
+  .jornada-ramo,
+  .jornada-node {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
