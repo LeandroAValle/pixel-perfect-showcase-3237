@@ -82,25 +82,8 @@ export function JornadaSection() {
         </p>
       </header>
 
-      <div ref={ref} className="relative px-6 sm:px-12 lg:px-20 py-16">
-        {/* Linha da jornada, desenhada conforme o scroll */}
-        <div className="pointer-events-none absolute inset-y-16 left-6 lg:left-1/2 lg:-translate-x-1/2 w-px">
-          <span className="absolute inset-0 bg-foreground/15" />
-          <span
-            className="absolute left-0 top-0 w-px bg-foreground origin-top"
-            style={{ height: `${progresso * 100}%` }}
-          />
-          <span
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 size-3 rounded-full bg-amarelo ring-4 ring-background"
-            style={{ top: `${progresso * 100}%` }}
-          />
-        </div>
-
-        <div className="relative max-w-5xl mx-auto pl-8 lg:pl-0">
-          {experiencias.map((exp, i) => (
-            <CardExperiencia key={exp.titulo} exp={exp} indice={i} />
-          ))}
-        </div>
+      <div className="relative px-4 sm:px-8 lg:px-20 py-10">
+        <MapaJornada />
       </div>
 
       <div className="px-6 sm:px-12 lg:px-20 pb-24">
