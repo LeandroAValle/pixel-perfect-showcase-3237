@@ -189,16 +189,6 @@
     transform: none;
   }
 
-  /* Mapa pixel da jornada */
-  .mapa-chao {
-    background-color: color-mix(in oklab, var(--background) 88%, oklch(0.6 0.12 130));
-    background-image:
-      linear-gradient(color-mix(in oklab, var(--foreground) 5%, transparent) 2px, transparent 2px),
-      linear-gradient(90deg, color-mix(in oklab, var(--foreground) 5%, transparent) 2px, transparent 2px),
-      radial-gradient(color-mix(in oklab, oklch(0.55 0.13 135) 35%, transparent) 2px, transparent 2.5px);
-    background-size: 32px 32px, 32px 32px, 48px 48px;
-    background-position: 0 0, 0 0, 12px 20px;
-  }
   .pixelado {
     image-rendering: pixelated;
   }

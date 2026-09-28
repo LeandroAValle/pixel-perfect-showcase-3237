@@ -90,7 +90,7 @@ export function MapaJornada() {
   return (
     <div
       ref={wrap}
-      className="mapa-chao relative mx-auto max-w-6xl rounded-3xl ring-1 ring-foreground/10 overflow-hidden"
+      className="relative mx-auto max-w-6xl overflow-visible"
       style={{ height: `${N * (mobile ? 820 : 640)}px` }}
     >
       {/* Estrada */}
