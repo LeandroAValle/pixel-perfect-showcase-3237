@@ -1,24 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { JornadaSection } from "@/components/jornada/JornadaSection";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Minha Jornada · Jelder Eric" },
+      {
+        name: "description",
+        content:
+          "A trajetória de Jelder Eric, sociólogo: da pesquisa na UnB à conservação no Cerrado, em uma linha do tempo que se ramifica em uma árvore de habilidades.",
+      },
+      { property: "og:title", content: "Minha Jornada · Jelder Eric" },
+      {
+        property: "og:description",
+        content:
+          "Linha do tempo interativa da carreira de Jelder Eric, encerrada por uma árvore de competências.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background font-sans text-foreground">
+      {/* Sidebar preta fixa (desktop) */}
+      <aside className="hidden lg:flex fixed inset-y-0 left-0 w-64 flex-col justify-between bg-sidebar text-sidebar-foreground px-8 py-10 z-20">
+        <div>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-sidebar-foreground/50">
+            Portfólio
+          </p>
+          <h1 className="mt-4 text-4xl font-extrabold leading-none text-balance">
+            Minha
+            <br />
+            Jornada
+          </h1>
+          <p className="mt-4 text-sm text-sidebar-foreground/60 text-pretty">
+            Um caderno de campo onde as anotações se conectam em um diagrama de ramos.
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <span className="size-2 rounded-full bg-amarelo shrink-0" />
+          <p className="text-[11px] uppercase tracking-[0.2em] text-sidebar-foreground/50">
+            2011 — 2026
+          </p>
+        </div>
+      </aside>
+
+      <main className="lg:pl-64">
+        <JornadaSection />
+      </main>
     </div>
   );
 }
