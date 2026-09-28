@@ -128,7 +128,7 @@ export function MapaJornada() {
 
       {/* Cidades */}
       {experiencias.map((exp, i) => {
-        const p = ps[i];
+        const p = ps[i]!;
         const visitada = i <= atual;
         const esquerda = i % 2 === 0;
         return (
