@@ -8,13 +8,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A trajetória de Jelder Eric, sociólogo: da pesquisa na UnB à conservação no Cerrado, em uma linha do tempo que se ramifica em uma árvore de habilidades.",
+          "A trajetória de Jelder Eric, sociólogo: da pesquisa na UnB à conservação no Cerrado, em uma jornada interativa por suas experiências.",
       },
       { property: "og:title", content: "Minha Jornada · Jelder Eric" },
       {
         property: "og:description",
         content:
-          "Linha do tempo interativa da carreira de Jelder Eric, encerrada por uma árvore de competências.",
+          "Uma jornada interativa pela carreira e pelas experiências de Jelder Eric.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +38,7 @@ function Index() {
             Jornada
           </h1>
           <p className="mt-4 text-sm text-sidebar-foreground/60 text-pretty">
-            Um caderno de campo onde as anotações se conectam em um diagrama de ramos.
+            Uma jornada por experiências que conectam pesquisa, gestão pública e conservação.
           </p>
         </div>
         <div className="flex items-center gap-3">

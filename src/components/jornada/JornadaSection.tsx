@@ -1,5 +1,4 @@
 import { MapaJornada } from "./MapaJornada";
-import { ArvoreHabilidades } from "./ArvoreHabilidades";
 
 export function JornadaSection() {
   return (
@@ -12,17 +11,13 @@ export function JornadaSection() {
           Onde cada lugar deixou uma marca.
         </h2>
         <p className="mt-6 text-base sm:text-lg text-foreground/70 text-pretty max-w-[52ch]">
-          Da universidade ao campo, cada experiência acrescentou um ramo. Role a página e acompanhe o
-          personagem viajando por cada cidade até a árvore de habilidades.
+          Da universidade ao campo, cada experiência acrescentou um novo capítulo. Role a página e
+          acompanhe o personagem viajando por cada etapa dessa trajetória.
         </p>
       </header>
 
-      <div className="relative px-4 sm:px-8 lg:px-20 py-10">
+      <div className="relative px-4 sm:px-8 lg:px-20 pt-10 pb-24">
         <MapaJornada />
-      </div>
-
-      <div className="px-6 sm:px-12 lg:px-20 pb-24">
-        <ArvoreHabilidades />
       </div>
     </section>
   );
